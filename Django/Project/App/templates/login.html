@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href={% static "CSS/feed_style.css" %}>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">
+            <p>Login .. </p>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="user_details">
+
+                <div class="input_box">
+                    <label for="email">Name</label>
+                    <input type="email" id="email" placeholder="Enter your Email" name="email">
+                </div>
+                <div class="input_box">
+                    <label for="password">Email</label>
+                    <input type="password" id="password" placeholder="Enter your email" name="pass" required value="">
+                </div>
+
+            </div>
+
+            <div class="reg_btn">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <script>
+        {% if mes %}
+        alert('{{mes}}')
+        {% endif %}
+    </script>
+</body>
+
+</html>
